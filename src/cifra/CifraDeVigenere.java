@@ -4,13 +4,31 @@ public class CifraDeVigenere {
 
 	public static void main(String[] args) {
 	    String alfabetoValido = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,;._";
-	    String texto = "asdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdfgsdf";
-        String key = "b";
+	    String texto = "Oi, meu nome e helton";
+        String key = "helton";
 
         String textoCifrado = cifrar(texto,key,alfabetoValido);
         System.out.println("Texto cifrado: " + textoCifrado);
         
         String textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
+        System.out.println("Texto decifrado: " + textodecifrado);
+        
+        texto = "Na formula 1 em 2025 teremos um brasileiro correndo";
+        key = "Gabriel Bortoleto";
+
+        textoCifrado = cifrar(texto,key,alfabetoValido);
+        System.out.println("\n\nTexto cifrado: " + textoCifrado);
+        
+        textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
+        System.out.println("Texto decifrado: " + textodecifrado);
+        
+        texto = "nao aguento mais testar isso, espero que funcione, agora";
+        key = "Por favor";
+
+        textoCifrado = cifrar(texto,key,alfabetoValido);
+        System.out.println("\n\nTexto cifrado: " + textoCifrado);
+        
+        textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
         System.out.println("Texto decifrado: " + textodecifrado);
 	}
 	
