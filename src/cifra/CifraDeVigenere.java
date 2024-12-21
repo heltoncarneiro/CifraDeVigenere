@@ -1,35 +1,47 @@
 package cifra;
 
+import java.util.Scanner;
+
 public class CifraDeVigenere {
 
 	public static void main(String[] args) {
 	    String alfabetoValido = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ,;._";
 	    String texto = "Oi, meu nome e helton";
         String key = "helton";
-
+        System.out.println("primeiro teste com texto \""+ texto+"\" e key: \""+ key+"\"");
         String textoCifrado = cifrar(texto,key,alfabetoValido);
         System.out.println("Texto cifrado: " + textoCifrado);
-        
         String textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
         System.out.println("Texto decifrado: " + textodecifrado);
         
         texto = "Na formula 1 em 2025 teremos um brasileiro correndo";
         key = "Gabriel Bortoleto";
-
+        System.out.println("\n\nsegundo teste com texto \""+ texto+"\" e key: \""+ key+"\"");
         textoCifrado = cifrar(texto,key,alfabetoValido);
-        System.out.println("\n\nTexto cifrado: " + textoCifrado);
-        
+        System.out.println("Texto cifrado: " + textoCifrado); 
         textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
         System.out.println("Texto decifrado: " + textodecifrado);
         
         texto = "nao aguento mais testar isso, espero que funcione, agora";
         key = "Por favor";
-
+        System.out.println("\n\nterceiro teste com texto \""+ texto+"\" e key: \""+ key+"\"");
         textoCifrado = cifrar(texto,key,alfabetoValido);
-        System.out.println("\n\nTexto cifrado: " + textoCifrado);
-        
+        System.out.println("Texto cifrado: " + textoCifrado);
         textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
         System.out.println("Texto decifrado: " + textodecifrado);
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n\nteste manual");
+        System.out.println("Escreva o texto a ser cifrado e decifrado:");
+        texto = sc.nextLine();
+        System.out.println("Escreva a key:");
+        key = sc.nextLine();
+        textoCifrado = cifrar(texto,key,alfabetoValido);
+        System.out.println("Texto cifrado: " + textoCifrado);
+        textodecifrado = decifrar(textoCifrado,key,alfabetoValido);
+        System.out.println("Texto decifrado: " + textodecifrado);
+
+        sc.close();
 	}
 	
 	public static void validarTexto(String texto,String alfabeto) {
